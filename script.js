@@ -1,20 +1,27 @@
 document.addEventListener('DOMContentLoaded', function () {
     // Cada constante armazena o elemento correspondente
     const instructions = document.getElementById('instructions');
+    const introducao = document.getElementById('introducao');
     const part1 = document.getElementById('part1');
     const part2 = document.getElementById('part2');
     const result = document.getElementById('result');
     const temperamentDetails = document.getElementById('temperament-details');
 
     // remover css hidden para tornar o elemento visível em instrucions
-    instructions.classList.remove('hidden');
+    introducao.classList.remove('hidden');
 
+    // evento ao usuário clicar no botão, as instruções são ocultadas e a primeira parte do conteúdo é exibida.
+    document.getElementById('instrucao').addEventListener('click', function () {
+        introducao.classList.add('hidden');
+        instructions.classList.remove('hidden');
+    }); 
+    
     // evento ao usuário clicar no botão, as instruções são ocultadas e a primeira parte do conteúdo é exibida.
     document.getElementById('start-part1').addEventListener('click', function () {
         instructions.classList.add('hidden');
         part1.classList.remove('hidden');
-    });
-    
+    }); 
+
     // ao clicar no elemento 'submit-part1', a primeira parte do conteúdo é ocultada, e a segunda parte é exibida.
     document.getElementById('submit-part1').addEventListener('click', function () {
         part1.classList.add('hidden');
